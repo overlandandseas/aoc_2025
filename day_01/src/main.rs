@@ -88,6 +88,6 @@ L82"#;
     }
     #[test]
     fn test_part_two() {
-        assert_eq!(part_two(&INPUT), -6);
+        assert_eq!(part_two(&INPUT), 6);
     }
 }
