@@ -28,9 +28,9 @@ fn part_one(input: &str) -> usize {
 
 fn part_two(input: &str) -> usize {
     let mut lines = input.lines().rev();
-
     let mut operations = lines.next().unwrap().split_whitespace();
-
+    let mut answer = 0;
+    let mut temp_answers = vec![];
     let mut flipped: Vec<Vec<char>> = vec![vec![]; input.find("\n").unwrap()];
 
     for line in lines.rev() {
@@ -38,11 +38,7 @@ fn part_two(input: &str) -> usize {
             flipped[idx].push(c);
         });
     }
-
-
-    let mut answer = 0;
-
-    let mut temp_answers = vec![];
+    
     for num_arr in flipped {
         if let Ok(num) = num_arr
             .iter()
